@@ -17,7 +17,7 @@ rightJustify(initialString: "Megha")
 
 
 //Using Closure
-let rightJustify = {
+let rightJustifyClosure = {
     (initialString: String)
     in
     
@@ -32,4 +32,4 @@ let rightJustify = {
     print(initialString)
 }
 
-rightJustify( "Megha")
+rightJustifyClosure("Megha")
