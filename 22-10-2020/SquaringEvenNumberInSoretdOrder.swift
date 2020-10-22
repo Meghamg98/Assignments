@@ -3,7 +3,6 @@ func filteringNumbers(list: [Int]) -> [Int] {
     var resultList = [Int]()
     var result = [Int]()
     
-    
     for (_, value) in list.enumerated() {
         if(value % 2 == 0){
             resultList.append(value)
@@ -19,8 +18,6 @@ func filteringNumbers(list: [Int]) -> [Int] {
     //print("Step 2: Sqauring Even numbers \(result)")
     
     result = result.sorted()
-    
-    
     return result
 }
 
