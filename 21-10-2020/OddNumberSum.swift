@@ -9,11 +9,10 @@ func oddNumberSum(inputNumber: UInt) {
             index = index + 2
         }
         print("\nThe total sum is = \(sum)")
-    }
-    else
-    {
+    } else
+     {
         print("Please enter an Odd positive integer")
-    }
+     }
 }
 
 oddNumberSum(inputNumber: 7)
@@ -35,11 +34,10 @@ let oddNumberSumClosure = {
             index = index + 2
         }
         print("\nThe total sum is = \(sum)")
-    }
-    else
-    {
+    } else
+     {
         print("Please enter an Odd positive integer")
-    }
+     }
 }
 
 oddNumberSumClosure(5)
