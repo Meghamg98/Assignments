@@ -1,28 +1,20 @@
 //Using function
-func filteringNumbers(list: [Int]) -> [Int] {
+func squaringEvenNumbersInAscendingOrder(initialList: [Int]) -> [Int] {
     var resultList = [Int]()
-    var result = [Int]()
     
-    for (_, value) in list.enumerated() {
+    for (_, value) in initialList.enumerated() {
         if(value % 2 == 0){
-            resultList.append(value)
+            let square = value * value
+            resultList.append(square)
         }
     }
-    //print("Step 1: Filtering Even numbers \(resultList)")
+    resultList = resultList.sorted()
     
-    for (_, value) in resultList.enumerated() {
-        var square = 0
-        square = value * value
-        result.append(square)
-    }
-    //print("Step 2: Sqauring Even numbers \(result)")
-    
-    result = result.sorted()
-    return result
+    return resultList
 }
 
-let elements=[ 2, 5, 3, 8, 10, 4, 7]
-print("The final list obtained :\(filteringNumbers(list: elements))")
+let elements=[ 2, 5, 3, 8, 10, 4, 7, 6]
+print("The final list obtained :\(squaringEvenNumbersInAscendingOrder(initialList: elements))")
 
 
 //Using Closure
@@ -52,5 +44,5 @@ let evenClosure = {
     return false
 }
 
-let numbers = [2, 6, 3, 9, 1, 4, 7]
+let numbers = [ 2, 5, 3, 8, 10, 4, 7, 6]
 print("The final list is \(squaringEvenNumbersInAscendingOrder(initialList: numbers, condition: evenClosure) )")
