@@ -5,10 +5,9 @@ func checkFermat(a: Int, b: Int, c: Int, n: Int) {
 
     if(n > 2 && leftSide == rightSide) {
         print("Holy smokes, Fermat was wrong!")
-    }  
-    else {
+    } else {
         print("No, that doesn’t work.")
-    }
+     }
 }
 
 checkFermat(a: 2, b: 4, c: 2, n: 3)
@@ -25,10 +24,9 @@ let checkFermatClosure =  {
 
     if(n > 2 && leftSide == rightSide) {
         print("Holy smokes, Fermat was wrong!")
-    }  
-    else {
+    } else {
         print("No, that doesn’t work.")
-    }
+     }
 }
 
 checkFermatClosure(2, 4, 2, 3)
