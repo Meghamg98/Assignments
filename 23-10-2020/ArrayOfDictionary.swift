@@ -10,7 +10,7 @@ arrayOfDictionary = [
     [
       "Name": "DEF",
       "Age": 21,
-      "Branch": "CS"
+      "Branch": "CSE"
     ],
     [
       "Name": "GHI",
@@ -19,25 +19,23 @@ arrayOfDictionary = [
     ]
 ]
 
-
 func arrayOfDictionaryFunction(array: [[String: Any]]) -> [Any] {
     let keyArray = [String](arrayOfDictionary[0].keys)
     
-        for j in 0..<array.count {
-            if let value = array[j][keyArray[0]] {
-                finalArray.append(value) 
-            }
-            if let value = array[j][keyArray[1]] {
-                finalArray.append(value) 
-            }
-            if let value = array[j][keyArray[2]] {
-                finalArray.append(value) 
-            }
-        
+    for j in 0..<array.count {
+        if let value = array[j][keyArray[0]] {
+            finalArray.append(value) 
+        }
+        if let value = array[j][keyArray[1]] {
+            finalArray.append(value) 
+        }
+        if let value = array[j][keyArray[2]] {
+            finalArray.append(value) 
+        }
     }
     
     return finalArray
 }
 
 let resultString = arrayOfDictionaryFunction(array: arrayOfDictionary)
-print(resultString)
+print("The values of given array of dictionary are : \n\(resultString)")
