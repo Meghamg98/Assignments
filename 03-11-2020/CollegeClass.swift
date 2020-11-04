@@ -4,12 +4,25 @@ class Element {
     let name: String
     var address: String = " "
     var phoneNumber: Int = 0
+    
+    init(name: String, address: String, phoneNumber: Int){
+        self.name = name
+        self.address = address
+        self.phoneNumber = phoneNumber
+    }
 }
 
 class Person: Element {
     let dateOfBirth: String
     var age: Int = 0
     let gender: String
+    
+    override init(dateOfBirth: String, age: Int, gender: String){
+        self.dateOfBirth = dateOfBirth
+        self.age = age
+        self.gender = gender
+        super.init()
+    }
     
     func leavesTaken() {
         // keep track of leaves
@@ -19,6 +32,13 @@ class Person: Element {
 class University: Element {
     var colleges: [College]
     var numberOfInstitutes: Int = 0
+    var type : String
+    
+    override init(numberOfInstitutes: Int){
+        self.numberOfInstitutes = numberOfInstitutes
+        self.type = type
+        super.init()
+    }
     
     func advertisement() {
         // advertise about their institutes and the features provided
@@ -28,6 +48,13 @@ class University: Element {
 class College: Element {
     var branches: [Branch]    
     var numberOfBranches: Int = 0
+    var course: String
+    
+    override init(numberOfBranches: Int){
+        self.numberOfBranches = numberOfBranches
+        self.course = course
+        super.init()
+    }
     
     func admission() {
         // do admission for the new students
@@ -52,6 +79,13 @@ class Branch: Element {
     var HODName: String = " "
     var totalNumberOfStudents: Int = 0
     var totalNumberOfLecturers: Int = 0
+    
+    override init(HODName: String, totalNumberOfStudents: Int, totalNumberOfLecturers: Int){
+        self.HODName = HODName
+        self.totalNumberOfStudents = totalNumberOfStudents
+        self.totalNumberOfLecturers = totalNumberOfLecturers
+        super.init()
+    }
     
     func branchActivities() {
         // Programs, quizes and many more activities
@@ -80,6 +114,13 @@ class Lecturer: Person {
     var salary: Int = 0
     var marks: [String: Int]
     
+    override init(employeeId: String, degree: String, salary: Int){
+        self.employeeId = employeeId
+        self.degree = degree
+        self.salary = salary
+        super.init()
+    }
+    
     func numberOfSubjects() {
         // details of the subjects to be taken by individual lecturer
     }
@@ -106,11 +147,21 @@ class Student: Person {
     var semester: Int = 1
     var marks: [String: Int]
     
+    override init(usn: String, semester: Int){
+        self.usn = usn
+        self.semester = semester
+        super.init()
+    }
+    
     func attendance() {
         // attendance obtained in each subject classes
     }
     
     func marksObtained() {
         // marks obtained in each subject 
+    }
+
+    func achievements() {
+        // student achievements in various activities
     }
 }
