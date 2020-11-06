@@ -141,21 +141,21 @@ class Student {
         marks.append(markDetails)
     }
 
-    func cgpaCalculation() -> Int {
-        var total = 0
-        var cgpa = 0
-		var marksArray = [Int]()
+    func cgpaCalculation() -> Float {
+        var total: Float = 0.0
+        var cgpa: Float = 0.0
+		var marksArray = [Float]()
 
         for (_, value) in marks.enumerated() {
-			for (_, value) in value.marksInEachSubject {
-				marksArray.append(value)
-			}
+		for (_, value) in value.marksInEachSubject {
+			marksArray.append(Float(value))
+		}
         }
 
-		for value in marksArray {
+	for value in marksArray {
             total += value
         }
-        cgpa = (total / (marksArray.count)) / 9
+        cgpa = (total / Float(marksArray.count)) / 9.5
 
         return cgpa
     }
@@ -166,7 +166,8 @@ class Student {
     
     func achievements() {
         // student achievements in various activities
-    }      
+    }
+       
 }
 
 class MarksOfStudent {
@@ -174,7 +175,8 @@ class MarksOfStudent {
 
     init(marksInEachSubject: [String: Int]) {
         self.marksInEachSubject = marksInEachSubject
-    }   
+    }
+    
 }
 
 //Creating University
@@ -275,5 +277,5 @@ student11.marksObtained(markDetails: mark11)
 student12.marksObtained(markDetails: mark12)
 
 
-var myCgpa = student2.cgpaCalculation()
-print(myCgpa)
+var myCgpa = student4.cgpaCalculation()
+print("My CGPA = \(myCgpa)")
